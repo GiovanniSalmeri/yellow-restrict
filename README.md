@@ -46,7 +46,7 @@ Passwords are stored in cleartext. Do not use them for any other purpose and tra
 
 ## Settings
 
-The following setting can be configured in file `system/settings/system.ini`:
+The following setting can be configured in file `system/extensions/yellow-system.ini`:
 
 `RestrictUserFile` (default: `restrict.ini`) = filename for users, passwords and groups  
 
