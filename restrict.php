@@ -14,7 +14,7 @@ class YellowRestrict {
     // Handle page meta data
     public function onParseMeta($page) {
         if ($page->isExisting("restrict")) {
-            $page->set("Description", $this->yellow->language->getTextHtml("RestrictDescription"));
+            $page->set("Description", $this->yellow->language->getTextHtml("restrictDescription"));
         }
     }
     
@@ -36,7 +36,7 @@ class YellowRestrict {
                 $this->yellow->page->setHeader("WWW-Authenticate", 'Basic realm="", charset="UTF-8"');
                 $this->yellow->page->error("401");
             } else {
-                $page->set("RestrictUser", $this->yellow->toolbox->getServer('PHP_AUTH_USER'));
+                $page->set("restrictUser", $this->yellow->toolbox->getServer('PHP_AUTH_USER'));
             }
         }
     }
@@ -46,7 +46,7 @@ class YellowRestrict {
         $output = null;
         if ($name=="logout") {
             if ($page->isExisting("restrict")) {
-                $output .= "<p>".str_replace("@user", "<b>".htmlspecialchars($page->get("RestrictUser"))."</b>", $this->yellow->language->getTextHtml("RestrictLogged"))."</p>\n";
+                $output .= "<p>".str_replace("@user", "<b>".$page->getHtml("restrictUser")."</b>", $this->yellow->language->getTextHtml("restrictLogged"))."</p>\n";
             }
         }
         return $output;
