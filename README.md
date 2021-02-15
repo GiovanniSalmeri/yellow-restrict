@@ -6,15 +6,15 @@ Restrict access to pages.
 
 ## How to restrict the access to one or more pages
 
-Add a `Restrict` setting at the top of a page to protect it and its descendant pages (top pages are considered children of the home page). The value of the setting is a comma separated list of users and/or groups that may access the page with their credentials. The names of groups are prepended with `#`.
+Add a `Restrict` setting at the top of a page to protect it and its descendant pages (top pages are considered children of the home page). The value of the setting is a comma separated list of users and/or groups that may access the page with their credentials. The names of groups are prepended with `@`.
 
 Usernames, passwords and groups are defined in a file `system/extensions/restrict.ini` with the following syntax:
 
 ```
-username:password:#group1,#group2...
+username:password:@group1,@group2...
 ```
 
-You can specify for each username zero or more groups it belongs to. All usernames belong moreover to an implicit group `#all`.
+You can specify for each username zero or more groups it belongs to. All usernames belong moreover to an implicit group `@all`.
 
 This extension relies on the [HTTP basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). For sensitive data use it only over an encrypted connection (`https://`). For a simpler alternative there is the [Private extension](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/private).
 
@@ -25,7 +25,7 @@ Page with restricted access:
 ```
 ---
 Title: Reserved page
-Restrict: john, #admin, #commitee
+Restrict: john, @admin, @commitee
 ---
 
 This page is reserved to John, administrators and members of the Commitee.
@@ -35,11 +35,11 @@ Usernames, passwords and groups in `restrict.ini`:
 
 ```
 john:a2S%iZhK
-mary:cAaRWC8&:#commitee,#admin
-ben:5DgZAC&R:#member
-lucy:ZWKD(8Jy:#admin,#member
-antony:79wB5w@Z:#commitee
-mark:9F5)F57e:#member
+mary:cAaRWC8&:@commitee,@admin
+ben:5DgZAC&R:@member
+lucy:ZWKD(8Jy:@admin,@member
+antony:79wB5w@Z:@commitee
+mark:9F5)F57e:@member
 ```
 
 Passwords are stored in cleartext. Do not use them for any other purpose and transmit them securely to users.
