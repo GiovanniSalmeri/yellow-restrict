@@ -63,8 +63,7 @@ class YellowRestrict {
             $groups[] = "@all";
             if ($user==$givenUser && $password==$givenPassword) {
                 foreach (array_map("trim", explode(",", $allowedPeople)) as $item) {
-                    if ($item=="") continue;
-                    if ($item[0]=="@") {
+                    if (substr($item, 0, 1)=="@") {
                         if (in_array($item, $groups)) return true;
                     } else {
 			if ($item==$user) return true;
