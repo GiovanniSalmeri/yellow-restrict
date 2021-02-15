@@ -11,10 +11,10 @@ Add a `Restrict` setting at the top of a page to protect it and its descendant p
 Usernames, passwords and groups are defined in a file `system/extensions/restrict.ini` with the following syntax:
 
 ```
-username : password : #group1, #group2...
+username:password:#group1,#group2...
 ```
 
-You can specify for each username zero or more groups it belongs to. All usernames belong moreover to an implicit group `#all`. Do not use spaces or `:` in usernames and passwords, or begin usernames with `#`.
+You can specify for each username zero or more groups it belongs to. All usernames belong moreover to an implicit group `#all`.
 
 This extension relies on the [HTTP basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). For sensitive data use it only over an encrypted connection (`https://`). For a simpler alternative there is the [Private extension](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/private).
 
@@ -34,12 +34,12 @@ This page is reserved to John, administrators and members of the Commitee.
 Usernames, passwords and groups in `restrict.ini`:
 
 ```
-john : a2S%iZhK
-mary : cAaRWC8& : #commitee, #admin
-ben : 5DgZAC&R : #member
-lucy : ZWKD(8Jy : #admin, #member
-antony : 79wB5w@Z : #commitee
-mark : 9F5)F57e : #member
+john:a2S%iZhK
+mary:cAaRWC8&:#commitee,#admin
+ben:5DgZAC&R:#member
+lucy:ZWKD(8Jy:#admin,#member
+antony:79wB5w@Z:#commitee
+mark:9F5)F57e:#member
 ```
 
 Passwords are stored in cleartext. Do not use them for any other purpose and transmit them securely to users.
