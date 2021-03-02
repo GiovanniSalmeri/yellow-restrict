@@ -4,7 +4,7 @@
 class YellowRestrict {
     const VERSION = "0.8.16";
     public $yellow;         //access to API
-    
+
     // Handle initialisation
     public function onLoad($yellow) {
         $this->yellow = $yellow;
@@ -17,7 +17,7 @@ class YellowRestrict {
             $page->set("Description", $this->yellow->language->getTextHtml("restrictDescription"));
         }
     }
-    
+
     // Handle page layout
     public function onParsePageLayout($page, $name) {
         $masterPage = $page;
@@ -31,13 +31,9 @@ class YellowRestrict {
             }
         }
         $allowedPeople = $masterPage ? $masterPage->get("restrict") : null;
-        if ($allowedPeople) {
-            if (!$this->matchPermissions($this->yellow->toolbox->getServer('PHP_AUTH_USER'), $this->yellow->toolbox->getServer('PHP_AUTH_PW'), $allowedPeople)) {
-                $this->yellow->page->setHeader("WWW-Authenticate", 'Basic realm="", charset="UTF-8"');
-                $this->yellow->page->error("401");
-            } else {
-                $page->set("restrictUser", $this->yellow->toolbox->getServer('PHP_AUTH_USER'));
-            }
+        if ($allowedPeople && !$this->matchPermissions($this->yellow->toolbox->getServer('PHP_AUTH_USER'), $this->yellow->toolbox->getServer('PHP_AUTH_PW'), $allowedPeople)) {
+            $this->yellow->page->setHeader("WWW-Authenticate", 'Basic realm="", charset="UTF-8"');
+            $this->yellow->page->error("401");
         }
     }
 
@@ -46,7 +42,7 @@ class YellowRestrict {
         $output = null;
         if ($name=="logout") {
             if ($page->isExisting("restrict")) {
-                $output .= "<p>".str_replace("@user", "<b>".$page->getHtml("restrictUser")."</b>", $this->yellow->language->getTextHtml("restrictLogged"))."</p>\n";
+                $output .= "<p>".str_replace("@user", "<b>".htmlspecialchars($this->yellow->toolbox->getServer('PHP_AUTH_USER'))."</b>", $this->yellow->language->getTextHtml("restrictLogged"))."</p>\n";
             }
         }
         return $output;
