@@ -60,6 +60,22 @@ For the restricted pages to show the username and a tip for "logging out", add t
 
 [Download extension](https://github.com/GiovanniSalmeri/yellow-restrict/archive/master.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
 
+For this extension to work with the Apache webserver, sometimes it is necessary to add to the file `.htaccess` the following line:
+
+```
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+```
+
+or the the following lines:
+
+```
+RewriteEngine On
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+```
+
+[Other solutions](https://stackoverflow.com/questions/26475885/authorization-header-missing-in-php-post-request) may be needed.
+
 ## Developer
 
 Giovanni Salmeri. [Get help](https://github.com/GiovanniSalmeri/yellow-restrict/issues).
