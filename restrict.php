@@ -11,15 +11,11 @@ class YellowRestrict {
         $this->yellow->system->setDefault("restrictUserFile", "restrict.ini");
     }
 
-    // Handle page meta data
-    public function onParseMeta($page) {
+    // Handle page layout
+    public function onParsePageLayout($page, $name) {
         if ($page->isExisting("restrict")) {
             $page->set("Description", $this->yellow->language->getTextHtml("restrictDescription"));
         }
-    }
-
-    // Handle page layout
-    public function onParsePageLayout($page, $name) {
         $masterPage = $page;
         while ($masterPage and !$masterPage->isExisting("restrict")) {
             $parentPage = $masterPage->getParent();
