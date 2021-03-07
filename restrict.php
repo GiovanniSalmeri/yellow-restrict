@@ -13,9 +13,6 @@ class YellowRestrict {
 
     // Handle page layout
     public function onParsePageLayout($page, $name) {
-        if ($page->isExisting("restrict")) {
-            $page->set("Description", $this->yellow->language->getTextHtml("restrictDescription"));
-        }
         $masterPage = $page;
         while ($masterPage and !$masterPage->isExisting("restrict")) {
             $parentPage = $masterPage->getParent();
@@ -27,9 +24,12 @@ class YellowRestrict {
             }
         }
         $allowedPeople = $masterPage ? $masterPage->get("restrict") : null;
-        if ($allowedPeople && !$this->matchPermissions($this->yellow->toolbox->getServer('PHP_AUTH_USER'), $this->yellow->toolbox->getServer('PHP_AUTH_PW'), $allowedPeople)) {
-            $this->yellow->page->setHeader("WWW-Authenticate", 'Basic realm="", charset="UTF-8"');
-            $this->yellow->page->error("401");
+        if ($allowedPeople) {
+            $page->set("Description", $this->yellow->language->getTextHtml("restrictDescription"));
+            if (!$this->matchPermissions($this->yellow->toolbox->getServer('PHP_AUTH_USER'), $this->yellow->toolbox->getServer('PHP_AUTH_PW'), $allowedPeople)) {
+                $this->yellow->page->setHeader("WWW-Authenticate", 'Basic realm="", charset="UTF-8"');
+                $this->yellow->page->error("401");
+            }
         }
     }
 
