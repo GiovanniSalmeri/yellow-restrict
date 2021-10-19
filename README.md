@@ -66,7 +66,7 @@ For this extension to work with the Apache webserver, sometimes it is necessary 
 SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
 ```
 
-or the the following lines:
+or the following lines:
 
 ```
 RewriteEngine On
