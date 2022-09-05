@@ -2,7 +2,7 @@ Restrict 0.8.16
 =============
 Restrict access to pages.
 
-<p align="center"><img src="restrict-screenshot.png?raw=true" width="795" height="594" alt="Screenshot"></p>
+<p align="center"><img src="restrict-screenshot.png?raw=true" alt="Screenshot"></p>
 
 ## How to restrict the access to one or more pages
 
