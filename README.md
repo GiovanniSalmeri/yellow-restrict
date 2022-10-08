@@ -58,7 +58,7 @@ For the restricted pages to show the username and a tip for "logging out", add t
 
 ## Installation
 
-[Download extension](https://github.com/GiovanniSalmeri/yellow-restrict/archive/master.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
+[Download extension](https://github.com/GiovanniSalmeri/yellow-restrict/archive/main.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
 
 For this extension to work with the Apache webserver, sometimes it is necessary to add to the file `.htaccess` the following line:
 
