@@ -16,7 +16,7 @@ username:password:@group1,@group2...
 
 You can specify for each username zero or more groups it belongs to. All usernames belong moreover to an implicit group `@all`.
 
-This extension relies on the [HTTP basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). For sensitive data use it only over an encrypted connection (`https://`). For a simpler alternative there is the [Private extension](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/private).
+This extension relies on the [HTTP basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). For sensitive data use it only over an encrypted connection (`https://`). For a simpler alternative there is the [Private extension](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/main/private).
 
 ## Examples
 
