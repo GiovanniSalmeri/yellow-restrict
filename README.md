@@ -78,4 +78,4 @@ RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 
 ## Developer
 
-Giovanni Salmeri. [Get help](https://github.com/GiovanniSalmeri/yellow-restrict/issues).
+Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/)
