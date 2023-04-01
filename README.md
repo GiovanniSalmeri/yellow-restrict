@@ -4,6 +4,10 @@ Restrict access to pages.
 
 <p align="center"><img src="restrict-screenshot.png?raw=true" alt="Screenshot"></p>
 
+## How to install an extension
+
+[Download ZIP file](https://github.com/GiovanniSalmeri/yellow-restrict/archive/main.zip) and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
+
 ## How to restrict the access to one or more pages
 
 Add a `Restrict` setting at the top of a page to protect it and its descendant pages (top pages are considered children of the home page). The value of the setting is a comma separated list of users and/or groups that may access the page with their credentials. The names of groups are prepended with `@`.
@@ -56,10 +60,6 @@ For the restricted pages to show the username and a tip for "logging out", add t
 <?php echo $this->yellow->page->getExtra("logout"); ?>
 ```
 
-## Installation
-
-[Download extension](https://github.com/GiovanniSalmeri/yellow-restrict/archive/main.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
-
 For this extension to work with the Apache webserver, sometimes it is necessary to add to the file `.htaccess` the following line:
 
 ```
@@ -78,4 +78,4 @@ RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 
 ## Developer
 
-Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/)
+Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/).
