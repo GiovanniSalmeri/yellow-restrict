@@ -52,7 +52,7 @@ Passwords are stored in cleartext. Do not use them for any other purpose and tra
 
 The following setting can be configured in file `system/extensions/yellow-system.ini`:
 
-`RestrictUserFile` (default: `restrict.ini`) = filename for users, passwords and groups  
+`RestrictUserFile` = filename for users, passwords and groups  
 
 For the restricted pages to show the username and a tip for "logging out", add the following line to the file `system/layouts/footer.html`:
 
