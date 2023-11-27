@@ -2,11 +2,11 @@ Restrict 0.8.16
 =============
 Restrict access to pages.
 
-<p align="center"><img src="restrict-screenshot.png?raw=true" alt="Screenshot"></p>
+<p align="SCREENSHOT.png?raw=true" alt="Screenshot"></p>
 
 ## How to install an extension
 
-[Download ZIP file](https://github.com/GiovanniSalmeri/yellow-restrict/archive/main.zip) and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
+[Download ZIP file](https://github.com/GiovanniSalmeri/yellow-restrict/archive/refs/heads/main.zip) and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
 
 ## How to restrict the access to one or more pages
 
