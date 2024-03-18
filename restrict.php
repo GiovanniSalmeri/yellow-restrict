@@ -9,7 +9,7 @@ class YellowRestrict {
     public function onLoad($yellow) {
         $this->yellow = $yellow;
         $this->yellow->system->setDefault("restrictUserFile", "restrict.ini");
-        $this->yellow->language->setDefaults([
+        $this->yellow->language->setDefaults(array(
             "Language: en",
             "RestrictDescription: Reserved content",
             "RestrictLogged: Logged as @user. Close the browser to log out.",
@@ -45,7 +45,7 @@ class YellowRestrict {
             "RestrictLogged: Conectado como @usuário. Feche o navegador para desconectar.",
             "CoreError401Title: Não autorizado",
             "CoreError401Text: Atualize a página e forneça suas credenciais para visualizar o conteúdo.",
-        ]);
+        ));
     }
 
     // Handle page layout
