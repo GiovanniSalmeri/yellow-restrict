@@ -1,5 +1,5 @@
-Restrict 0.8.16
-=============
+# Restrict 0.9.1
+
 Restrict access to pages.
 
 <p align="center"><img src="SCREENSHOT.png" alt="Screenshot"></p>
