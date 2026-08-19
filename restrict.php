@@ -88,7 +88,8 @@ class YellowRestrict {
         if ($lines) foreach ($lines as $line) {
             if (trim($line)=="" or $line[0]=="#") continue;
             list($user, $password, $groupsList) = array_map("trim", $this->yellow->toolbox->getTextList($line, ":", 3));
-            $groups = array_map("trim", explode(",", $groupsList));
+            list($user, $password, $groupsList) = array_pad(array_map("trim", explode(":", $line, 3)), 3, null);
+            $groups = is_null($groupsList) ? [] : array_map("trim", explode(",", $groupsList));
             $groups[] = "@all";
             if ($user==$givenUser && $password==$givenPassword) {
                 foreach (array_map("trim", explode(",", $allowedPeople)) as $item) {
