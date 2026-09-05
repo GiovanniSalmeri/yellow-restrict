@@ -3,6 +3,7 @@
 
 class YellowRestrict {
     const VERSION = "0.9.1";
+    const PRIORITY = 1000;
     public $yellow;         //access to API
 
     // Handle initialisation
