@@ -56,12 +56,6 @@ The following setting can be configured in file `system/extensions/yellow-system
 
 `RestrictUserFile` = filename for users, passwords and groups  
 
-For the restricted pages to show the username and a tip for "logging out", add the following line to the file `system/layouts/footer.html`:
-
-```
-<?php echo $this->yellow->page->getExtraHtml("logout"); ?>
-```
-
 For this extension to work with the Apache webserver, sometimes it is necessary to add to the file `.htaccess` the following line:
 
 ```
