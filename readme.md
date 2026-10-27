@@ -1,8 +1,8 @@
-# Restrict 0.9.1
+# Restrict 1.0.0
 
-Restrict access to pages.
+Restrict access to pages. Developed by Giovanni Salmeri.
 
-<p align="center"><img src="SCREENSHOT.png" alt="Screenshot"></p>
+<p align="center"><img src="screenshot.png" alt="Screenshot"></p>
 
 ## How to install an extension
 
@@ -72,6 +72,4 @@ RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
 
 [Other solutions](https://stackoverflow.com/questions/26475885/authorization-header-missing-in-php-post-request) may be needed.
 
-## Developer
-
-Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/).
+Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
